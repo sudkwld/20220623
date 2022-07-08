@@ -23,10 +23,6 @@ ol {
   font-size: 11px;
 }
 
-.randering {
-  image-rendering: -webkit-optimize-contrast;
-}
-
 #wrap {
   width: 100%;
   min-width: 1010px;
@@ -138,7 +134,7 @@ header {
   left: 0;
   float: left;
   width: 450px;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: space-between;
   z-index: 3;
@@ -260,7 +256,7 @@ header {
   color: #000;
 }
 
-.search_page2 {
+.search_page {
   display: none;
 }
 
@@ -298,7 +294,7 @@ header {
 
 .header_ch {
   width: 210px;
-  height: 80px;
+  height: 90px;
   position: relative;
   overflow: hidden;
 }
@@ -309,17 +305,18 @@ header {
 }
 
 .header_ch li{
+  display: none;
   width: 220px;
-  height: 60px;
+  height: 80px;
 }
 
 .header_ch li a img {
   width: 100%;
-  height: 100%;
+  height: 60px;
 }
 
 .ch_on {
-  display: block;
+  display: block !important;
 }
 
 .ch_off {
@@ -328,8 +325,14 @@ header {
 
 .ch_numb {
   position: absolute;
-  bottom: 2px;
+  bottom: 10px;
   right: 3px;
+}
+
+.ch_slidenum {
+  position: absolute;
+  bottom: 12px;
+  right: 48px;
 }
 
 .ch_numb img {
@@ -364,11 +367,15 @@ nav {
   width: 50px;
   height: 50px;
   padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   background-color: #353f67;
   margin-right: 10px;
+}
+
+.hamburger a img {
+  position: absolute;
+  top: 17px;
+  left: 15px;
 }
 
 .hamburger_nav li {
@@ -380,6 +387,290 @@ nav {
   font-size: 16px;
   color: #fff;
   font-weight: 700;
+}
+
+.hamburger_hide {
+  display: none;
+  width: auto;
+  height: auto;
+}
+
+.hamburger_hide_nav {
+  width: 710px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.hamburger_hide_nav li:first-child {
+  background-color: #353f67;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin-right: 10px;
+}
+
+.hamburger_hide_nav li img {
+  position: absolute;
+  top: 17px;
+  left: 15px;
+}
+
+.hamburger_hide_nav li {
+  float: left;
+  padding: 5px 10px;
+  color: #fff;
+}
+
+.hamburger_hide_nav li:nth-of-type(3) {
+  opacity: 0.3;
+  font-size: 17px;
+  margin-top: -4px;
+}
+
+.hamburger_hide_nav li:last-of-type a {
+  opacity: 0.7;
+}
+
+.hamburger_hide_nav li a {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+}
+
+.hamburger_hide_nav .hide_menu {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  z-index: 3;
+  border: 1px solid #5e6b9e;
+  margin: 0;
+  padding: 0;
+  width: 170px;
+}
+
+.hide_menu li {
+  width: 100%;
+  background-color: #fbfbfb;
+  border-bottom: 1px solid #dadada;
+  padding: 15px 0 15px 15px;
+  font-size: 13px;
+  color: #000;
+  font-weight: 900;
+}
+
+.hide_menu #hide_fix {
+  width: 100%;
+  height: auto;
+  background-color: #fbfbfb;
+  position: relative;
+}
+
+.hide_menu li:nth-of-type(3) {
+  opacity: 1;
+  border-top: 1px solid #dadada;
+  font-size: 13px;
+  color: #000;
+}
+
+.hide_menu li a:last-of-type {
+  opacity: 1;
+}
+
+.hide_menu_sub01,
+.hide_menu_sub02, 
+.hide_menu_sub03,
+.hide_menu_sub04,
+.hide_menu_sub05,
+.hide_menu_sub06,
+.hide_menu_sub07,
+.hide_menu_sub08,
+.hide_menu_sub09 {
+  position: absolute;
+  top: -1px;
+  left: 169px;
+  width: auto;
+  height: 437px;
+  background-color: #fff;
+  border-bottom: 1px solid #5e6b9e;
+  border-right:  1px solid #5e6b9e;
+  display: none;
+  box-shadow: 4px 0 4px -4px black;
+  z-index:2;
+}
+
+.hide_sub_left {
+  width: 380px;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  padding-left: 10px;
+}
+
+.hide_sub_title {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.hide_sub_title h3 {
+  color: #000;
+  font-size: 13px;
+}
+
+.hide_stick {
+  width: 2px;
+  height: 11px;
+  margin: 0 5px 0 10px;
+  background-color: #000;
+}
+
+.hide_sub_right {
+  width: 150px;
+}
+
+.hide_border_check {
+  border-right: 1px solid #dadada;
+}
+
+.hide_sub_box {
+  width: 110px;
+  margin-left: 10px;
+}
+
+.hide_sub_box ul {
+  padding-bottom: 30px;
+}
+
+.hide_sub_left .hide_sub_box:last-of-type {
+  border-right: 1px solid #dadada;
+}
+
+.hide_sub_box ul li {
+  width: 110px;
+  padding: 4px 0 4px 5px;
+  border: none;
+  float: none;
+  background-color: inherit;
+}
+
+.hide_sub_box ul li:hover {
+  background-color: #dfdfdf;
+}
+
+.hide_sub_box ul li:first-of-type {
+  width: 110px;
+  height: auto;
+  background-color: inherit;
+}
+
+.hide_sub_box ul li:first-of-type:hover {
+  background-color: #dfdfdf;
+}
+
+.hide_sub_box ul li:nth-of-type(3) {
+  border: none;
+}
+
+.hide_sub_box ul li a {
+  color: #000;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.hide_menu_sub02 ul li:first-of-type {
+  height: 30px;
+}
+
+.hide_menu_sub02 ul li:first-of-type a {
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.hide_menu_sub04 .hide_sub_left {
+  width: 130px;
+}
+
+.hide_menu_sub04 .hide_sub_left:not(:last-of-type) .hide_sub_box {
+  border-right: 1px solid #dadada;
+}
+
+.hide_menu_sub05 .hide_sub_box {
+  width: 140px;
+}
+
+.hide_menu_sub05 .hide_sub_right li {
+  width: 130px;
+}
+
+.hide_menu_sub05 ul li:first-of-type {
+  width: 130px;
+}
+
+.hide_menu_sub05 .hide_sub_right:first-of-type .hide_sub_box {
+  border-right: 1px solid #dadada;
+}
+
+.hide_menu_sub06 .hide_sub_left, 
+.hide_menu_sub07 .hide_sub_left,
+.hide_menu_sub09 .hide_sub_left {
+  width: 180px;
+  padding: 0;
+}
+
+.hide_menu_sub06 .hide_sub_title, 
+.hide_menu_sub07 .hide_sub_title {
+  margin-left: -5px;
+}
+
+.hide_menu_sub06 .hide_sub_box, 
+.hide_menu_sub07 .hide_sub_box,
+.hide_menu_sub09 .hide_sub_box {
+  width: 160px;
+}
+
+.hide_menu_sub06 .hide_sub_box li,
+.hide_menu_sub07 .hide_sub_box li {
+  margin: 1px;
+  padding: 4px 0;
+  width: 160px;
+}
+
+.hide_menu_sub06 ul li:first-of-type,
+.hide_menu_sub07 ul li:first-of-type {
+  width: 160px;
+}
+
+.hide_menu_sub06 .hide_sub_left:last-of-type .hide_sub_box,
+.hide_menu_sub07 .hide_sub_left:last-of-type .hide_sub_box {
+  border: none;
+}
+
+.hide_menu_sub09 .hide_sub_left .hide_sub_box {
+  border: none;
+}
+
+.hide_menu_sub09 ul {
+  padding: 0;
+}
+
+.hide_menu_sub08 ul li,
+.hide_menu_sub09 ul li {
+  padding: 2.5px 0;
+}
+
+.hide_menu_sub08 .hide_sub_right:first-of-type .hide_sub_box {
+  border-right: 1px solid #dadada;
+  width: 130px;
+}
+
+.red {
+  color: red !important;
+}
+
+.hide_sub_right .hide_sub_box {
+  margin-left: 10px;
 }
 
 .nav_ebook {
