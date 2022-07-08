@@ -6,7 +6,7 @@ main {
 
 #slider {
   width: 100%;
-  background-color: #fbeaef;
+  background-color: #e7e9f6;
 }
 
 #slider_wrap {
@@ -27,17 +27,22 @@ main {
   position: absolute;
   top: 50%;
   left: 0;
+  cursor: pointer;
 }
 
 .slider_show_next {
   position: absolute;
   top: 50%;
   right: 0;
+  cursor: pointer;
 }
 
 .slider_show {
   width: 710px;
   height: 370px;
+}
+
+.slider_show:not(:first-of-type) {
   display: none;
 }
 
@@ -56,16 +61,13 @@ main {
   border: 1px solid #d7d7d7;
   border-left: none;
   background-color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 #main_slider li:first-child {
   border-left: 1px solid #d7d7d7;
-}
-
-#main_slider li a {
-  color: #000;
-  font-size: 12px;
-  font-weight: 700;
 }
 
 #sub_slider {

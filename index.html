@@ -887,13 +887,13 @@
             <img src="img/center_left_btn.png" alt="slider_prev" class="slider_show_prev">
             <img src="img/center_right_btn.png" alt="slider_next" class="slider_show_next">
             <ul>
-              <li><a href="#">요즘 이 책</a></li>
-              <li><a href="#">핫이슈</a></li>
-              <li><a href="#">새로나온책</a></li>
-              <li><a href="#">기획/테마</a></li>
-              <li><a href="#">eBook</a></li>
-              <li><a href="#">sam</a></li>
-              <li><a href="#">한정특가</a></li>
+              <li>요즘 이 책</li>
+              <li>핫이슈</li>
+              <li>새로나온책</li>
+              <li>기획/테마</li>
+              <li>eBook</li>
+              <li>sam</li>
+              <li>한정특가</li>
             </ul>
           </div>
           <div id="sub_slider">
@@ -2296,6 +2296,35 @@
       })
         });
     });
+    //Slider
+    $(function () {
+      let sliderBg = ["#e7e9f6","#a8daff","#e4f1d3","#daecf0","#f8f4d7","#def3e4","#fbeaef"];
+      
+      $("#main_slider li").mouseenter(function () {
+        $("#slider").css("background-color",sliderBg[$(this).index()])
+        $(".slider_show").hide()
+        $(".slider_show").eq($(this).index()).stop().show()
+
+        $("#main_slider li").css({
+          "background-color":"#fff",
+          "color":"#000"
+        })
+        $(this).css({
+          "background-color":"#5e6b9e",
+          "color":"fff"
+        })
+        
+      }).mouseleave(function(){
+        $("#main_slider li").css({
+          "background-color":"#fff",
+          "color":"#000"
+        })
+        $(this).css({
+          "background-color":"#5e6b9e",
+          "color":"#fff"
+        })
+      });
+    });
     //Section
     //화제의 신간
     $(function () {
@@ -2460,48 +2489,6 @@
       topBannerNext.addEventListener('click', () => {
         addSlides(1)
       });
-    })();
-    //main slider
-    
-    (function () {
-      const sliderShow = document.querySelectorAll('.slider_show')
-      const sliderShowPrev = document.querySelector('.slider_show_prev')
-      const sliderShowNext = document.querySelector('.slider_show_next')
-      let sliderShowIndex = 1
-
-      addSlideShow = (num) => {
-        slideShowLogic(sliderShowIndex += num)
-      }
-
-      thisSlideShow = (num) => {
-        slideShowLogic(sliderShowIndex = num)
-      }
-
-      slideShowLogic = (num) => {
-        if (num > sliderShow.length) {
-          sliderShowIndex = 1
-        }
-        if (num < 1) {
-          sliderShowIndex = sliderShow.length
-        }
-        for (let i = 0; i < sliderShow.length; i++) {
-          const element = sliderShow[i];
-          console.log(sliderShow)
-          element.classList.remove('ch_on')
-        }
-        sliderShow[sliderShowIndex - 1].classList.add('ch_on')
-      }
-
-      slideShowLogic(sliderShowIndex)
-
-      sliderShowPrev.addEventListener('click', () => {
-       addSlideShow(-1)
-      });
-
-      sliderShowNext.addEventListener('click', () => {
-        addSlideShow(1)
-      });
-
     })();
     //이럴 땐 이런 책 
     //background-color 변경
